@@ -131,6 +131,42 @@
   - 不是所有public class 都可以直接使用，只能用过`require`
   - `exports`只能在有class那一层才能够导出
 
-  
+  # Java面向对象设计
+
+  ## Java接口设计
+
+  ### 类设计
+
+  - (形容词)+名词
+
+  ### 可访问性
+
+  - public:公开的API
+  - protected:不能修饰**外部**class
+  - default：**只能在当前的package使用，属于私有API**
+  - private:不能修饰**外部**class
+
+  >内置类是类的成员
+
+  ### 可继承性
+
+  - `final`不具备继承性，只能实现类，不能与abstract共用
+
+    - String
+
+      >`不变性`private final char[] value;
+      >
+      >可以通过`反射`进行修改
+      >
+      >```java
+      >   //get string value字段
+      >        Field valueField=String.class.getDeclaredField("value");
+      >        //set 可访问
+      >        valueField.setAccessible(true);
+      >        //set value
+      >        valueField.set(value1,chars);
+      >```
+
+  - 非`final`可以继承
 
   
