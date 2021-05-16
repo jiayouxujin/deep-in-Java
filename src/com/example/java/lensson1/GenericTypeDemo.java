@@ -1,5 +1,6 @@
 package com.example.java.lensson1;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,6 +12,16 @@ public class GenericTypeDemo {
      */
     public interface Converter<S, T> {
         T convert(S source);
+    }
+
+    /**
+     * T与?的区别
+     * T用于类和方法，?一般用在方法
+     * T存在继承性
+     * @param <T>
+     */
+    public interface StringConverter<T extends Serializable> extends Converter<String,T>{
+
     }
 
     public static void main(String[] args) {
