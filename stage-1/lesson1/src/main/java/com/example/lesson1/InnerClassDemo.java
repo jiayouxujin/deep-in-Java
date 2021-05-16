@@ -1,4 +1,4 @@
-package com.example.java.lensson1;
+package com.example.lesson1;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

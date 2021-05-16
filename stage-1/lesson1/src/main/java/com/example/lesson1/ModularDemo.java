@@ -1,4 +1,4 @@
-package com.example.java.lensson1;
+package com.example.lesson1;
 
 import java.sql.Connection;
 import java.util.logging.Logger;
