@@ -122,6 +122,15 @@
   };
   ```
 
+  ## Java模块化
+
+  >Java9之前采用了.jar文件管理，Java9模块化后，采用了module-info.java
+
+  #### 强封装性
+
+  - 不是所有public class 都可以直接使用，只能用过`require`
+  - `exports`只能在有class那一层才能够导出
+
   
 
   
