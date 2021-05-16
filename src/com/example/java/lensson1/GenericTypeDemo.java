@@ -1,4 +1,4 @@
-package com.example;
+package com.example.java.lensson1;
 
 import java.util.Collections;
 import java.util.List;
