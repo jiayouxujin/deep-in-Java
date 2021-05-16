@@ -169,4 +169,54 @@
 
   - 非`final`可以继承
 
-  
+  ### 具体类设计
+
+  - 功能组件HashMap
+  - 接口/抽象类实现HashMap<-AbstractMap<-Map
+  - 数据对象POJO
+  - 工具辅助Helper
+
+  ### 抽象类实现
+
+  抽象类是介于接口和类之间
+
+  >抽象类里可以有实现方法的
+  >
+  >Java8有default后可以有实现方法，不过还是不能有字段
+
+  **以Abstract和Base为前缀**
+
+  - 接口通用设计（模板设计）AbstractList
+
+  ### 接口设计
+
+  - 常见场景
+
+    - 通讯契约`FeignClient`
+
+      - API
+      - RPC
+
+    - 常量定义
+
+      ```java
+      interface A{
+          int VALUE=1;
+      }
+      ```
+
+    - 标记接口`标记语义`
+      - Clonable
+
+  - 常见模式
+
+    - 无状态
+    - Java8 完全抽象，Java8+局部抽象(`default`方法)
+    - 单一抽象 （函数式接口`只有一个抽象方法`）
+
+  ### 内置类设计
+
+  - Builder
+  - ThreadLocalMap
+  - UnmodifiableCollection
+
