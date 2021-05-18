@@ -219,7 +219,7 @@
   内置类也是类得成员，只不过是比较特殊得成员
   
   - Builder 
-  - ThreadLocalMap 临时存储(突然理解了这个)
+  - **ThreadLocalMap 临时存储(突然理解了这个)**
   - UnmodifiableCollection
   
   具体设计
@@ -228,3 +228,67 @@
   >
   >private是内部私有类或者接口
 
+### Java枚举设计
+
+**真谛**
+
+- 枚举实际上是final class
+- 成员修饰符是public static final
+- `values`是Java编译器做的字节码提升(即Java字节码自己生成的)
+
+#### 枚举类(徒手写)
+
+在Java还未引入枚举的概念时，为了枚举
+
+>- 成员用常量表示，类型为当前类型
+>- 常用关键词final修饰
+>- 非public构造函数
+
+```java
+final class Counting {
+    public static final Counting ONE = new Counting(1);
+    public static final Counting TOW = new Counting(2);
+    public static final Counting THREE = new Counting(3);
+    public static final Counting FOUR = new Counting(4);
+    public static final Counting FIVE = new Counting(5);
+
+    private int value;
+
+    private Counting(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Counting : " + value;
+    }
+
+    /**
+     * 没有通过字节码提升的技术
+     * @return
+     */
+    public static Counting[] values() {
+        Field[] fields = Counting.class.getDeclaredFields();
+
+        //Fields -> filter -> public static final -> get
+        return Stream.of(fields).filter(field -> {
+            int modifiers = field.getModifiers();
+            return Modifier.isPublic(modifiers) && Modifier.isStatic(modifiers) && Modifier.isFinal(modifiers);
+        }).map(field -> {
+            try {
+                return (Counting) field.get(null);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }).collect(Collectors.toList()).toArray(new Counting[0]);
+    }
+}
+```
+
+#### Java枚举
+
+>- 强类型约束
+>- 继承java.lang.Enum
+>- 不可显示的继承或者被继承(因为是final class)
+
+在枚举里添加一个抽象方法,是因为每个对象需要实现的方式不同，可以参考`TimeUnit`
