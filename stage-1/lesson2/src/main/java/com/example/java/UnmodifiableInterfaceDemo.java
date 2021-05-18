@@ -13,6 +13,9 @@ public class UnmodifiableInterfaceDemo {
         collection.add(6);
         System.out.println(collection);
 
+        /**
+         * 线程安全问题：问是否有读写并存得情况
+         */
         collection=unmodifiable(1,2,3,4,5);
         collection.add(6);
     }
@@ -22,6 +25,9 @@ public class UnmodifiableInterfaceDemo {
     }
 
     public static Collection<Integer> unmodifiable(Integer... values) {
+        /**
+         * 通常用于方法得返回值，通知使用者该方法是只读得
+         */
         return Collections.unmodifiableList(Arrays.asList(values));
     }
 }

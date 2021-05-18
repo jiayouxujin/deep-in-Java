@@ -219,7 +219,7 @@
   内置类也是类得成员，只不过是比较特殊得成员
   
   - Builder 
-  - ThreadLocalMap 临时存储
+  - ThreadLocalMap 临时存储(突然理解了这个)
   - UnmodifiableCollection
   
   具体设计
