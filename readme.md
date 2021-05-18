@@ -216,11 +216,15 @@
 
   ### 内置类设计
 
+  内置类也是类得成员，只不过是比较特殊得成员
+  
   - Builder 
   - ThreadLocalMap 临时存储
   - UnmodifiableCollection
   
   具体设计
   
-  >如果需要公开得时候，public和
+  >如果需要公开得时候，public和static修饰某个内置类或者接口，但是Java8+接口不需要显式得声明static
+  >
+  >private是内部私有类或者接口
 
