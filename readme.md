@@ -190,32 +190,34 @@
 
   ### 接口设计
 
+  >为了兼容性增加default方法
+
   - 常见场景
 
     - 通讯契约`FeignClient`
-
+  
       - API
       - RPC
 
     - 常量定义
-
+  
       ```java
       interface A{
           int VALUE=1;
       }
       ```
-
+  
     - 标记接口`标记语义`
       - Clonable
 
   - 常见模式
-
+  
     - 无状态
     - Java8 完全抽象，Java8+局部抽象(`default`方法)
     - 单一抽象 （函数式接口`只有一个抽象方法`）
 
   ### 内置类设计
-
+  
   内置类也是类得成员，只不过是比较特殊得成员
   
   - Builder 
@@ -292,3 +294,36 @@ final class Counting {
 >- 不可显示的继承或者被继承(因为是final class)
 
 在枚举里添加一个抽象方法,是因为每个对象需要实现的方式不同，可以参考`TimeUnit`
+
+## Java泛型
+
+### 使用场景
+
+- 编译时强类型检查
+- 避免类型强转
+
+```java
+ List list=new ArrayList();
+        list.add("A");
+        list.add(1);
+
+        List<Object> list1=list;
+```
+
+- 实现通用算法
+
+### 泛型类型
+
+#### 类型参数规约
+
+- E 表示集合元素
+- V 表示值
+- K 表示键
+- T 表示类型
+
+#### 泛型设计
+
+- 单界限
+- 多界限
+- 泛型方法和有界参数
+- 
