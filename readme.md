@@ -216,7 +216,11 @@
 
   ### 内置类设计
 
-  - Builder
-  - ThreadLocalMap
+  - Builder 
+  - ThreadLocalMap 临时存储
   - UnmodifiableCollection
+  
+  具体设计
+  
+  >如果需要公开得时候，public和
 
