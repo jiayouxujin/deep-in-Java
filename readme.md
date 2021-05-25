@@ -338,3 +338,19 @@ final class Counting {
 - 转换类型 Function<T,R>
 - 断定类型 Predicate<T>
 - 隐藏类型 Action
+
+### 函数式接口设计
+
+- S 只出不仅
+
+>可用于方法、构造器、方法返回值
+
+- C 只进不出
+
+>可用于方法、构造器
+
+- F 有出有进
+- P boolean判断类型
+
+>作为方法、构造器
+
