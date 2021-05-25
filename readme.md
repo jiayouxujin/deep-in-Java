@@ -326,4 +326,15 @@ final class Counting {
 - 单界限
 - 多界限
 - 泛型方法和有界参数
-- 
+
+## 函数式接口
+
+### 函数式接口类型
+
+(数据流转)
+
+- 提供类型-Supplier<T>
+- 消费类型Consumer<T>
+- 转换类型 Function<T,R>
+- 断定类型 Predicate<T>
+- 隐藏类型 Action

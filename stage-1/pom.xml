@@ -11,7 +11,7 @@
         <module>lesson1</module>
         <module>lesson2</module>
         <module>lesson3</module>
-        <module>lesson4</module>
+        <module>functionlesson</module>
     </modules>
     <packaging>pom</packaging>
 
