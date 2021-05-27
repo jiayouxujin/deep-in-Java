@@ -30,6 +30,10 @@ java -verbose:class
 
 # Java集合
 
+一致性hash
+
+
+
 ## 集合接口
 
 - 基于`java.util.Collection`
@@ -57,3 +61,7 @@ java -verbose:class
     - `Deque`
 
 - 基于`java.util,Map`
+
+  - 通用接口
+    - `SortedMap`
+    - `TreeMap`
