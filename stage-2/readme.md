@@ -28,3 +28,32 @@ java -verbose:class
 
 ## 模块化反射
 
+# Java集合
+
+## 集合接口
+
+- 基于`java.util.Collection`
+
+  - 通用接口
+
+    - `java.util.List`
+    - `Set`
+
+    ```java
+    public static int hashCode(byte[] value) {
+            int h = 0;
+            int length = value.length >> 1;
+            for (int i = 0; i < length; i++) {
+                h = 31 * h + getChar(value, i);
+            }
+            return h;
+        }
+    在ASCII码得场景里，一般都是有序，但是会导致误解
+    ```
+
+    - `SortedSet`
+    - `NavigableSet`
+    - `Queue`
+    - `Deque`
+
+- 基于`java.util,Map`
