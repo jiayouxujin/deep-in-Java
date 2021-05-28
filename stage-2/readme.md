@@ -69,3 +69,17 @@ java -verbose:class
   - 通用接口
     - `SortedMap`
     - `TreeMap`
+
+## 集合设计
+
+集合方法入参
+
+>1. 如果能用Iterable尽量用
+>2. 其次是Collection
+>3. 再者是List或者Set
+>
+>**禁止使用具体类型，比如ArrayList,LinkedHashSet**
+
+### 集合转换
+
+- Arrays.asList,Collections.list
