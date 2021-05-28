@@ -59,6 +59,10 @@ java -verbose:class
     - `NavigableSet`
     - `Queue`
     - `Deque`
+    
+  - Legacy实现（几乎都是线程安全的）
+
+    - `Vector` 使用关键字`synchronized`来修饰，所以是线程安全的
 
 - 基于`java.util,Map`
 
